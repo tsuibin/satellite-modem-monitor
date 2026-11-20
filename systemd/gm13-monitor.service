@@ -1,0 +1,15 @@
+[Unit]
+Description=GM13 satellite module realtime dashboard (Tkinter)
+After=graphical-session.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/LoongBox
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/tmp/xauth_HWFvAx
+ExecStart=/usr/bin/python3 /home/LoongBox/gm13_monitor.py
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
